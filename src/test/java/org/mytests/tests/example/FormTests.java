@@ -2,14 +2,19 @@ package org.mytests.tests.example;
 
 import com.epam.jdi.light.elements.composite.Form;
 import org.mytests.tests.TestsInit;
+import org.mytests.tests.testng.TestNGListener;
 import org.mytests.uiobjects.example.entities.Contacts;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import static org.mytests.tests.states.States.*;
-import static org.mytests.uiobjects.example.entities.Defaults.*;
+import static org.mytests.tests.states.States.shouldBeLoggedIn;
+import static org.mytests.tests.states.States.shouldBeLoggedOut;
+import static org.mytests.uiobjects.example.entities.Defaults.DEFAULT_CONTACT;
+import static org.mytests.uiobjects.example.entities.Defaults.DEFAULT_USER;
 import static org.mytests.uiobjects.example.site.SiteJdi.*;
-import static org.mytests.uiobjects.example.site.pages.ContactFormPage.*;
+import static org.mytests.uiobjects.example.site.pages.ContactFormPage.contactForm;
 
+@Listeners(TestNGListener.class)
 public class FormTests implements TestsInit {
 
     @Test
